@@ -2,7 +2,7 @@
 Тестовое задание для вакансии Unity Developer
 ## Игра референс - [Hit Master 3D](https://play.google.com/store/apps/details?id=com.hit.master)
 
-[![](https://j.gifs.com/oZVANB.gif)](https://youtu.be/GUt28W3bz-A)
+[![](https://img.youtube.com/vi/GUt28W3bz-A/0.jpg)](https://www.youtube.com/watch?v=GUt28W3bz-A)
 
 ### Инструментарий:
 * Ассет для создания игровой локации: [Polygon Starter Pack](https://assetstore.unity.com/packages/3d/props/polygon-starter-pack-156819)
