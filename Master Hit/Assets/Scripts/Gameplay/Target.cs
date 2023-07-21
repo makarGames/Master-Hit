@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using EnemyLogic;
+using Gameplay;
 using UnityEngine;
 
 public class Target : MonoBehaviour
