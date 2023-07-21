@@ -89,6 +89,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "nrjwolf.games.attachattributes": {
+      "version": "https://github.com/Nrjwolf/unity-auto-attach-component-attributes.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "719b0afa8a1abd8765d71d6ce1cce7b97718bc59"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
