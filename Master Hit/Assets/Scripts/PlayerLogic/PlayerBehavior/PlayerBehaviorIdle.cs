@@ -4,31 +4,28 @@ namespace PlayerLogic.PlayerBehavior
 {
     public class PlayerBehaviorIdle : IPlayerBehavior
     {
-        private Animator _animator;
-        private Player _player;
+        private readonly PlayerData _playerData;
 
-        public PlayerBehaviorIdle(Animator newAnimator)
+        public PlayerBehaviorIdle(PlayerData playerData)
         {
-            _animator = newAnimator;
-            _player = Player.S;
+            _playerData = playerData;
         }
 
         public void Enter()
         {
-            _animator.SetBool("Idle", true);
-        }
-
-        public void Exit()
-        {
-            _animator.SetBool("Idle", false);
+            _playerData.PlayerAnimator.PlayIdle();
         }
 
         public void Update()
         {
-            if (_player.startRound)
-                _player.CheckForReadyToMove();
+            if (Player.S.startRound)
+                Player.S.CheckForReadyToMove();
             else if (Input.GetMouseButtonDown(0))
-                _player.startRound = true;
+                Player.S.startRound = true;
+        }
+
+        public void Exit()
+        {
         }
     }
 }

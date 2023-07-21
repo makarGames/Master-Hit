@@ -4,36 +4,35 @@ namespace PlayerLogic.PlayerBehavior
 {
     public class PlayerBehaviorRun : IPlayerBehavior
     {
+        private readonly PlayerData _playerData;
         private float _speed = 5f;
         private float _turnSpeed = 60f;
-
-        private Player _player;
 
         private Quaternion _targetRotation;
         private Transform _wayPoint;
         private Transform _playerTransform;
 
-        public PlayerBehaviorRun(Transform newTransform, Player player)
+        public PlayerBehaviorRun(PlayerData playerData)
         {
-            _playerTransform = newTransform;
-            _player = player;
+            _playerData = playerData;
+            _playerTransform = _playerData.Transform;
         }
 
         public void Enter()
         {
-            _wayPoint = _player.GetCurrentWayPoint();
+            _wayPoint = Player.S.GetCurrentWayPoint();
             SetRotationToPoint();
-        }
-
-        public void Exit()
-        {
-
+            _playerData.PlayerAnimator.PlayRun();
         }
 
         public void Update()
         {
             TurnToPoint();
             Moving();
+        }
+
+        public void Exit()
+        {
         }
 
         private void SetRotationToPoint()
@@ -63,7 +62,7 @@ namespace PlayerLogic.PlayerBehavior
             float distance = Vector3.Distance(start, end);
 
             if (distance < 0.5f)
-                _player.SetBehaviorIdle();
+                Player.S.SetBehaviorIdle();
         }
     }
 }

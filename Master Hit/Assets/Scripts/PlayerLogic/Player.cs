@@ -9,8 +9,8 @@ namespace PlayerLogic
     public class Player : MonoBehaviour
     {
         [SerializeField] private List<Transform> _wayPoints;
-        [SerializeField] private Animator _animator;
-        [SerializeField] private Transform _playerTransform;
+        
+        [SerializeField] private PlayerData _playerData;
         [SerializeField] private Weapon _weapon;
 
         private WayPoint _wayPointScript;
@@ -73,8 +73,8 @@ namespace PlayerLogic
         {
             _behaviorsMap = new Dictionary<Type, IPlayerBehavior>();
 
-            _behaviorsMap[typeof(PlayerBehaviorIdle)] = new PlayerBehaviorIdle(_animator);
-            _behaviorsMap[typeof(PlayerBehaviorRun)] = new PlayerBehaviorRun(_playerTransform, this);
+            _behaviorsMap[typeof(PlayerBehaviorIdle)] = new PlayerBehaviorIdle(_playerData);
+            _behaviorsMap[typeof(PlayerBehaviorRun)] = new PlayerBehaviorRun(_playerData);
         }
 
         private void SetBehavior(IPlayerBehavior newBehavior)
